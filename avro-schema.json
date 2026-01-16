@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "AdsbExchangeOperationEvent",
+  "namespace": "com.yourorg.adsb",
+  "doc": "Replayable aircraft operations event (landing/takeoff) from ADSBExchange CSV exports.",
+  "fields": [
+    { "name": "time", "type": { "type": "long", "logicalType": "timestamp-millis" }, "doc": "Event time in epoch millis (UTC)." },
+
+    { "name": "icao", "type": "string", "doc": "ICAO hex address (lowercase in source)." },
+    { "name": "operation", "type": { "type": "enum", "name": "OperationType", "symbols": ["landing", "takeoff", "unknown"] }, "default": "unknown" },
+
+    { "name": "airport", "type": ["null", "string"], "default": null },
+    { "name": "registration", "type": ["null", "string"], "default": null },
+    { "name": "flight", "type": ["null", "string"], "default": null },
+
+    { "name": "ac_type", "type": ["null", "string"], "default": null, "doc": "Aircraft type code (e.g., P28A)." },
+    { "name": "runway", "type": ["null", "string"], "default": null },
+
+    { "name": "flight_link", "type": ["null", "string"], "default": null },
+    { "name": "squawk", "type": ["null", "string"], "default": null },
+
+    { "name": "signal_type", "type": ["null", "string"], "default": null, "doc": "e.g., adsb_icao, adsr_icao." },
+    { "name": "category", "type": ["null", "string"], "default": null, "doc": "Emitter category (e.g., A1, A3, A5)." },
+
+    { "name": "year", "type": ["null", "int"], "default": null },
+    { "name": "manufacturer", "type": ["null", "string"], "default": null },
+    { "name": "model", "type": ["null", "string"], "default": null },
+    { "name": "ownop", "type": ["null", "string"], "default": null },
+
+    { "name": "faa_pia", "type": ["null", "boolean"], "default": null },
+    { "name": "faa_ladd", "type": ["null", "boolean"], "default": null },
+
+    { "name": "short_type", "type": ["null", "string"], "default": null },
+    { "name": "mil", "type": ["null", "boolean"], "default": null },
+
+    { "name": "apt_type", "type": ["null", "string"], "default": null, "doc": "Airport type (small/medium/large_airport etc)." },
+    { "name": "name", "type": ["null", "string"], "default": null },
+
+    { "name": "continent", "type": ["null", "string"], "default": null },
+    { "name": "iso_country", "type": ["null", "string"], "default": null },
+    { "name": "iso_region", "type": ["null", "string"], "default": null },
+    { "name": "municipality", "type": ["null", "string"], "default": null },
+
+    { "name": "scheduled_service", "type": ["null", "boolean"], "default": null },
+    { "name": "iata_code", "type": ["null", "string"], "default": null },
+
+    { "name": "elev", "type": ["null", "int"], "default": null, "doc": "Airport elevation in feet." },
+
+    { "name": "time_original", "type": ["null", "string"], "default": null, "doc": "Original CSV timestamp (kept for traceability)." }
+  ]
+}
