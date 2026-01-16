@@ -1,0 +1,13 @@
+{
+  "name": "uploading-streaming-flight-data-workshop-cc",
+  "version": "1.0.0",
+  "description": "Streaming data from a historical file into an Apache Kafka topic in Confluent Cloud",
+  "private": true,
+  "dependencies": {
+    "@kafkajs/confluent-schema-registry": "^3.9.0",
+    "avsc": "^5.7.9",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "kafkajs": "^2.2.4"
+  }
+}
