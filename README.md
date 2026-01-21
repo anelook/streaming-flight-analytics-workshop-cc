@@ -353,30 +353,48 @@ WITH takeoffs_5min AS (
         window_time AS `time`,
         COUNT(*) AS takeoffs_per_5min
     FROM TABLE(
-            TUMBLE(TABLE flight_replay_rt, DESCRIPTOR(`time`), INTERVAL '5' MINUTE)
-         )
+        TUMBLE(TABLE flight_replay_rt, DESCRIPTOR(`time`), INTERVAL '5' MINUTE)
+    )
     WHERE operation = 'takeoff'
       AND airport = 'EHAM'
     GROUP BY airport, window_start, window_end, window_time
-)
-
-SELECT
-    airport,
-    `time`,
-    takeoffs_per_5min,
-    ML_DETECT_ANOMALIES(
+),
+with_anomaly AS (
+    SELECT
+        airport,
+        `time`,
+        takeoffs_per_5min,
+        ML_DETECT_ANOMALIES(
             CAST(takeoffs_per_5min AS DOUBLE),
             `time`,
             JSON_OBJECT(
-                    'minTrainingSize'      VALUE 10,      -- train after ~30 windows :llmCitationRef[6]
-                    'enableStl'           VALUE FALSE,
-                    'confidencePercentage' VALUE 95.0     -- 95% band: less strict than 99% :llmCitationRef[7]
+                'minTrainingSize'       VALUE 5,
+                'enableStl'            VALUE FALSE,
+                'confidencePercentage' VALUE 95.0
             )
-    ) OVER (
-    ORDER BY `time`
-    RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-  ) AS anomaly
-FROM takeoffs_5min;
+        ) OVER (
+          ORDER BY `time`
+          RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ) AS anomaly
+    FROM takeoffs_5min
+)
+
+SELECT
+  airport,
+  `time`,
+  takeoffs_per_5min,
+
+  anomaly.`timestamp`       AS ts,
+  anomaly.actual_value    AS actual_value,
+  anomaly.forecast_value  AS forecast_value,
+  anomaly.lower_bound     AS lower_bound,
+  anomaly.upper_bound     AS upper_bound,
+  anomaly.rmse            AS rmse,
+  anomaly.aic             AS aic,
+  anomaly.is_anomaly      AS is_anomaly
+
+FROM with_anomaly
+WHERE anomaly.is_anomaly IS NOT NULL;
 ```
 The returned anomaly row includes fields like `forecast_value`, `lower_bound`, `upper_bound`, `rmse`, `aic`, `timestamp`, and `is_anomaly`.
 `is_anomaly` becomes TRUE when the actual count falls outside the confidence band.
