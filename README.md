@@ -30,6 +30,7 @@ todo -add screenshot/gif
 Start by creating a new **Environment**. This makes it easier to clean everything up later.
 
 Go to **Environments**, click **Add cloud environment**, keep the **Essentials** category, and give it a name (for example, *Workshop*).
+<img width="742" height="578" alt="Screenshot 2026-01-19 at 13 49 14" src="https://github.com/user-attachments/assets/693aef77-13c2-4e42-9199-302dc7f6ecbc" />
 
 Next, create an Apache Kafka cluster:
 - Use the newly created environment
