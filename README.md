@@ -1,4 +1,4 @@
-# Streaming flight data. Hands-on with Confluent Cloud: Apache Kafka®, Apache Flink®, and Tableflow
+# Streaming flight data ✈️. Hands-on with Confluent Cloud: Apache Kafka®, Apache Flink®, and Tableflow
 This is a hands-on workshop that uses streamed flight data to explore Apache Kafka®, Apache Flink®, Apache Iceberg, Trino, and Superset.
 The workshop is built around Confluent Cloud and focuses on learning by doing.
 
