@@ -533,6 +533,39 @@ Go to datasets and create a dataset for the flights table:
 
 <img height="500" alt="Screenshot 2026-02-13 at 11 18 04" src="https://github.com/user-attachments/assets/5d7a01a6-0798-4e1c-ba96-290df01a48b0" />
 
+Ideas for visualisations:
+
+**Manufacturer top list**
+- Bar Chart
+- X-axis - manufacturer
+- Metrics - COUNT(*)
+- Row limit - 10
+
+<img height="400" alt="Screenshot 2026-02-13 at 11 38 53" src="https://github.com/user-attachments/assets/11453e31-55fd-4980-b114-329c1b6c3b94" />
+
+**Traffic over time**
+- Time-series Percent Change
+- Time column - time
+- Time grain - minute
+- Metric - COUNT(*)
+- (Optional) Filters: airport = '...' or iso_country = '...'
+
+<img height="400" alt="Screenshot 2026-02-13 at 11 45 43" src="https://github.com/user-attachments/assets/ed41a4b4-f4c9-4198-8d8a-c0a307234617" />
+
+**Top airports by activity**
+- Pie chart
+- Dimension - airport
+- Metric - COUNT(*)
+- Row limit - 10
+
+<img width="1294" height="653" alt="Screenshot 2026-02-13 at 11 49 32" src="https://github.com/user-attachments/assets/6703ed20-3b93-4feb-92b8-061d8ee1b6e6" />
+
+**Military vs civilian share**
+- Table
+- Dimension - mil
+- Metric - COUNT(*)
+
+<img width="1305" height="548" alt="Screenshot 2026-02-13 at 11 52 18" src="https://github.com/user-attachments/assets/d442fe8f-5015-4b61-990e-393495b0f3c8" />
 
 
 ## 📍Step 6. Cleanup
