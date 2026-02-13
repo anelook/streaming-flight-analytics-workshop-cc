@@ -34,7 +34,7 @@ Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI 
 Start by creating a new **Environment**. This makes it easier to clean everything up later.
 
 Go to **Environments**, click **Add cloud environment**, keep the **Essentials** category, and give it a name (for example, *Workshop*).
-<img width="371" height="289" alt="Screenshot 2026-01-19 at 13 49 14" src="https://github.com/user-attachments/assets/693aef77-13c2-4e42-9199-302dc7f6ecbc" />
+<img height="300" alt="Screenshot 2026-01-19 at 13 49 14" src="https://github.com/user-attachments/assets/693aef77-13c2-4e42-9199-302dc7f6ecbc" />
 
 Next, create an Apache Kafka cluster:
 - Use the newly created environment
@@ -71,7 +71,7 @@ The schema will be stored in Confluent Cloud and used when writing and reading r
 To access Schema Registry, applications need API keys.
 
 Go to **Schema Registry** in the Confluent Cloud UI.
-<img width="2294" height="1354" alt="2" src="https://github.com/user-attachments/assets/df44e2ab-a073-4617-af05-ef30ba879daa" />
+<img height="300" alt="2" src="https://github.com/user-attachments/assets/df44e2ab-a073-4617-af05-ef30ba879daa" />
 
 First:
 - Open the **Endpoint** tab
@@ -111,7 +111,7 @@ Instead, open a new terminal tab in your Codespace to run the next commands.
 
 At this point, you should see data flowing into the topic, and you can inspect the records directly in the Confluent Cloud UI.
 
-<img width="1306" height="729" alt="Screenshot 2026-02-13 at 10 37 22" src="https://github.com/user-attachments/assets/61a2e9e8-1f4d-4213-b757-0363bd780254" />
+<img height="300" alt="Screenshot 2026-02-13 at 10 37 22" src="https://github.com/user-attachments/assets/61a2e9e8-1f4d-4213-b757-0363bd780254" />
 
 
 ## 📍 Step 3. Process streaming data with Apache Flink
