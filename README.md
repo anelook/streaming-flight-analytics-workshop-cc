@@ -86,7 +86,7 @@ Next, from the **Overview** page:
 - Select the `Workshop` environment
 - Click **Create API key**
   
-<img width="761" height="543" alt="Screenshot 2026-02-13 at 10 35 31" src="https://github.com/user-attachments/assets/2b3a1333-07c1-40e4-9ece-89d0128990d7" />
+<img height="300" alt="Screenshot 2026-02-13 at 10 35 31" src="https://github.com/user-attachments/assets/2b3a1333-07c1-40e4-9ece-89d0128990d7" />
 
 Use the generated values in your `.env` file:
 - API key → `SCHEMA_REGISTRY_USERNAME`
