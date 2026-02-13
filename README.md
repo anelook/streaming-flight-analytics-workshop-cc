@@ -558,17 +558,23 @@ Ideas for visualisations:
 - Metric - COUNT(*)
 - Row limit - 10
 
-<img width="1294" height="653" alt="Screenshot 2026-02-13 at 11 49 32" src="https://github.com/user-attachments/assets/6703ed20-3b93-4feb-92b8-061d8ee1b6e6" />
+<img height="400" alt="Screenshot 2026-02-13 at 11 49 32" src="https://github.com/user-attachments/assets/6703ed20-3b93-4feb-92b8-061d8ee1b6e6" />
 
 **Military vs civilian share**
 - Table
 - Dimension - mil
 - Metric - COUNT(*)
 
-<img width="1305" height="548" alt="Screenshot 2026-02-13 at 11 52 18" src="https://github.com/user-attachments/assets/d442fe8f-5015-4b61-990e-393495b0f3c8" />
+<img height="400" alt="Screenshot 2026-02-13 at 11 52 18" src="https://github.com/user-attachments/assets/d442fe8f-5015-4b61-990e-393495b0f3c8" />
 
 
 ## 📍Step 6. Cleanup
 
-Delete environment
-Delete keys
+First delete the *Workshop* environment:
+
+<img height="400" alt="5" src="https://github.com/user-attachments/assets/4efc6af9-5189-453d-a356-56915a8b75e2" />
+
+Then make sure that all API keys are removed:
+
+<img width="1128" height="462" alt="Screenshot 2026-02-13 at 11 59 14" src="https://github.com/user-attachments/assets/18b0645d-5913-4078-a8cd-c89646b7d288" />
+
