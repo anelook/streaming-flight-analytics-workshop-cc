@@ -72,7 +72,7 @@ To access Schema Registry, applications need API keys.
 
 Go to **Schema Registry** in the Confluent Cloud UI:
 
-<img height="300" alt="2" src="https://github.com/user-attachments/assets/df44e2ab-a073-4617-af05-ef30ba879daa" />
+<img height="400" alt="2" src="https://github.com/user-attachments/assets/df44e2ab-a073-4617-af05-ef30ba879daa" />
 
 First:
 - Open the **Endpoint** tab
@@ -87,7 +87,7 @@ Next, from the **Overview** page:
 - Select the `Workshop` environment
 - Click **Create API key**
   
-<img height="300" alt="Screenshot 2026-02-13 at 10 35 31" src="https://github.com/user-attachments/assets/2b3a1333-07c1-40e4-9ece-89d0128990d7" />
+<img height="400" alt="Screenshot 2026-02-13 at 10 35 31" src="https://github.com/user-attachments/assets/2b3a1333-07c1-40e4-9ece-89d0128990d7" />
 
 Use the generated values in your `.env` file:
 - API key → `SCHEMA_REGISTRY_USERNAME`
@@ -112,7 +112,7 @@ Instead, open a new terminal tab in your Codespace to run the next commands.
 
 At this point, you should see data flowing into the topic, and you can inspect the records directly in the Confluent Cloud UI.
 
-<img height="300" alt="Screenshot 2026-02-13 at 10 37 22" src="https://github.com/user-attachments/assets/61a2e9e8-1f4d-4213-b757-0363bd780254" />
+<img height="400" alt="Screenshot 2026-02-13 at 10 37 22" src="https://github.com/user-attachments/assets/61a2e9e8-1f4d-4213-b757-0363bd780254" />
 
 
 ## 📍 Step 3. Process streaming data with Apache Flink
@@ -123,10 +123,14 @@ To do this, we’ll create an Apache Flink **compute pool**.
 
 Go to your environment overview, click **Compute pools**, then **Create compute pool**.
 
+<img height="400" alt="3" src="https://github.com/user-attachments/assets/a9c1e9dc-c24d-4ab5-b423-37bb1cc48742" />
+
 ⚠️ **Important:** Make sure to select the **same cloud provider and region** as the Apache Kafka cluster.
 
 Once the compute pool is ready, click **Open SQL workspace**.  
 Select your Kafka cluster as the database, and you’re ready to run SQL queries on live streaming data.
+
+<img height="400" alt="4" src="https://github.com/user-attachments/assets/149b88e3-044d-454f-b0ce-2e33e027d64d" />
 
 ### 3.1 Create a new table *with a watermark*
 
@@ -171,6 +175,7 @@ CREATE TABLE flight_replay_rt (
   WATERMARK FOR `time` AS `time` - INTERVAL '5' SECOND
 )
 ```
+
 
 Next insert the data into it:
 ```
@@ -243,7 +248,9 @@ We'll be using now the table `flight_replay_rt` for all our experiments.
 ### 3.2 Enable Tableflow for `flight_replay_rt`.
 To save us a bit time later, let's enable Tableflow for `flight_replay_rt`.
 Go to the topic page and click on **Enable Tableflow**.
-todo add pic
+
+<img height="400" alt="Screenshot 2026-02-13 at 10 56 12" src="https://github.com/user-attachments/assets/bfec4996-897e-4b9c-8939-c4c3192dab50" />
+
 
 ### 3.3 Query streaming data using SQL
 
@@ -269,6 +276,9 @@ LIMIT 10;
 ```
 You’ll most likely see some of the following airports in the results:
 
+<img height="400" alt="Screenshot 2026-02-13 at 10 59 12" src="https://github.com/user-attachments/assets/9c39e170-da06-4b58-b304-25ed733ea879" />
+
+
 EHAM – Amsterdam Airport Schiphol (Netherlands)
 RJTT – Haneda Airport (Tokyo, Japan)
 EGLL – Heathrow Airport (London, UK)
@@ -289,6 +299,9 @@ GROUP BY window_start, window_end, operation
 ORDER BY window_start DESC, cnt DESC
 LIMIT 200;
 ```
+
+<img height="400" alt="Screenshot 2026-02-13 at 10 59 24" src="https://github.com/user-attachments/assets/39d52a94-a8cb-453b-b8b2-a3caf62d8029" />
+
 
 Next, let’s split landings vs. takeoffs per minute using tumbling windows:
 ```sql
@@ -432,8 +445,12 @@ You’ll need the following information:
 - an API key and secret
 - the region of your Apache Kafka cluster
 
-You can find the endpoint address and create API keys in the **Tableflow** page in Confluent Cloud.  
-Create the API keys the same way as before, and use them to populate the values in `tableflow.properties`..
+You can find the endpoint address and create API keys in the **Tableflow** page in Confluent Cloud. 
+
+<img width="1187" height="408" alt="Screenshot 2026-02-13 at 11 03 09" src="https://github.com/user-attachments/assets/bb810859-afe1-4004-88ab-0ce6d8e74510" />
+
+
+Create the API keys the same way as before, and use them to populate the values in `tableflow.properties`:
 
 ```bash
 # tableflow.properties
@@ -490,7 +507,7 @@ docker restart superset
 Superset needs a bit of time to start. Once it’s ready, use the forwarded port (8080) to open the UI
 (right-click the port in Codespaces and choose Open in Browser).
 
-todo add picture
+<img width="753" height="124" alt="Screenshot 2026-02-13 at 11 15 05" src="https://github.com/user-attachments/assets/4a905aa7-da64-46c0-b4db-2361847aceb2" />
 
 Log in using the default credentials:
 
@@ -499,14 +516,14 @@ Password: admin
 
 Next, go to Settings → Database Connections and create a new database with the following SQLAlchemy URI:
 ```trino://superset@trino:8080/tableflow```
-todo screenshot
+
+<img height="400" alt="Screenshot 2026-02-13 at 11 16 45" src="https://github.com/user-attachments/assets/f202211b-f493-4bd5-a515-3777e587987c" />
 
 
-Go to datasets Create a dataset
-todo add pic
+Go to datasets and create a dataset for the flights table:
 
 
-
+<img height="500" alt="Screenshot 2026-02-13 at 11 18 04" src="https://github.com/user-attachments/assets/5d7a01a6-0798-4e1c-ba96-290df01a48b0" />
 
 
 
