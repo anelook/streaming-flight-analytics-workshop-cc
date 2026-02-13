@@ -70,7 +70,8 @@ Click **Add data contract** and use the schema from [avro-schema.json](https://g
 The schema will be stored in Confluent Cloud and used when writing and reading records.  
 To access Schema Registry, applications need API keys.
 
-Go to **Schema Registry** in the Confluent Cloud UI.
+Go to **Schema Registry** in the Confluent Cloud UI:
+
 <img height="300" alt="2" src="https://github.com/user-attachments/assets/df44e2ab-a073-4617-af05-ef30ba879daa" />
 
 First:
