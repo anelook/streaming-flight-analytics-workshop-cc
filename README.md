@@ -25,7 +25,7 @@ Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI 
 
 <img width="439" height="648" alt="Screenshot 2026-02-13 at 10 23 23" src="https://github.com/user-attachments/assets/e48e1cf5-7597-4fec-bda4-616ddb0cdd5b" />
 
-<img width="1003" height="1457" alt="1" src="https://github.com/user-attachments/assets/5f6e8fd4-a9c9-4750-b183-082d0c6acabb" />
+<img width="334" height="485" alt="1" src="https://github.com/user-attachments/assets/5f6e8fd4-a9c9-4750-b183-082d0c6acabb" />
 
 <img width="795" height="383" alt="Screenshot 2026-02-13 at 10 24 28" src="https://github.com/user-attachments/assets/79cf8da8-e50a-4ca8-b686-6dcffe81fe00" />
 
@@ -36,7 +36,7 @@ Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI 
 Start by creating a new **Environment**. This makes it easier to clean everything up later.
 
 Go to **Environments**, click **Add cloud environment**, keep the **Essentials** category, and give it a name (for example, *Workshop*).
-<img width="742" height="578" alt="Screenshot 2026-01-19 at 13 49 14" src="https://github.com/user-attachments/assets/693aef77-13c2-4e42-9199-302dc7f6ecbc" />
+<img width="371" height="289" alt="Screenshot 2026-01-19 at 13 49 14" src="https://github.com/user-attachments/assets/693aef77-13c2-4e42-9199-302dc7f6ecbc" />
 
 Next, create an Apache Kafka cluster:
 - Use the newly created environment
