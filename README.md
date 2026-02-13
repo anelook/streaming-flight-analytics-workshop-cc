@@ -25,7 +25,7 @@ Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI 
 
 <img width="220" height="324" alt="Screenshot 2026-02-13 at 10 23 23" src="https://github.com/user-attachments/assets/e48e1cf5-7597-4fec-bda4-616ddb0cdd5b" />
 
-<img width="334" height="485" alt="1" src="https://github.com/user-attachments/assets/5f6e8fd4-a9c9-4750-b183-082d0c6acabb" />
+<img width="223" height="323" alt="1" src="https://github.com/user-attachments/assets/5f6e8fd4-a9c9-4750-b183-082d0c6acabb" />
 
 ## 📍Step 2. Bring the data in!
 
