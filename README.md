@@ -21,16 +21,11 @@ In the project root, rename `.env-example` to `.env`. This file is where we’ll
 
 ### 1.2 Get a free trial for Confluent Cloud
 Register for Confluent Cloud and get free credits by visiting  [cnfl.io/workshop-cloud](cnfl.io/workshop-cloud).
-Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI and apply the promo code: ``CONFLUENTDEV1``.
+Once you’ve registered, go to **Billing & Payment** in the Confluent Cloud UI and apply the promo code: ``CONFLUENTDEV1``:
 
 <img width="220" height="324" alt="Screenshot 2026-02-13 at 10 23 23" src="https://github.com/user-attachments/assets/e48e1cf5-7597-4fec-bda4-616ddb0cdd5b" />
 
-
 <img width="334" height="485" alt="1" src="https://github.com/user-attachments/assets/5f6e8fd4-a9c9-4750-b183-082d0c6acabb" />
-
-
-<img width="795" height="383" alt="Screenshot 2026-02-13 at 10 24 28" src="https://github.com/user-attachments/assets/79cf8da8-e50a-4ca8-b686-6dcffe81fe00" />
-
 
 ## 📍Step 2. Bring the data in!
 
