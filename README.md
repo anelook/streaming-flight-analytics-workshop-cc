@@ -356,6 +356,10 @@ SELECT
 FROM per_minute
 WHERE airport = 'EHAM';
 ```
+
+<img height="400" alt="Screenshot 2026-02-13 at 11 21 50" src="https://github.com/user-attachments/assets/f135c025-6601-47d4-8525-5b81ec95c071" />
+
+
 We set `horizon` to *5*, so for each historical row, ML_FORECAST produces 5 forecast steps into the future. Each step has fields like:
 ```bash
 forecast timestamp, forecasted value, lower bound, upper bound, RMSE, AIC
@@ -419,6 +423,10 @@ SELECT
 FROM with_anomaly
 WHERE anomaly.is_anomaly IS NOT NULL;
 ```
+
+<img width="987" height="142" alt="Screenshot 2026-02-13 at 11 26 08" src="https://github.com/user-attachments/assets/a4f89fc3-d38f-43cb-930c-f579a4a52d20" />
+
+
 The returned anomaly row includes fields like `forecast_value`, `lower_bound`, `upper_bound`, `rmse`, `aic`, `timestamp`, and `is_anomaly`.
 `is_anomaly` becomes TRUE when the actual count falls outside the confidence band.
 
@@ -524,8 +532,6 @@ Go to datasets and create a dataset for the flights table:
 
 
 <img height="500" alt="Screenshot 2026-02-13 at 11 18 04" src="https://github.com/user-attachments/assets/5d7a01a6-0798-4e1c-ba96-290df01a48b0" />
-
-
 
 
 
